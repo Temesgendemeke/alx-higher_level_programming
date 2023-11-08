@@ -8,5 +8,5 @@ print(a[b])
 
 
 
-
+map(func, )
 
