@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 
-a = [1,2,2,34,44]
+a = {"h", "p", "k", "m"}
+b = {"t","m", "g", "k","p"}
 
-for i in a:
-    ke = []
-    if i == 1:
-        a.append(8)
-    else:
-        a.append(i)
+print(a.symmetric_difference(b))
 
