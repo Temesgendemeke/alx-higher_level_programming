@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
-a = {"h", "p", "k", "m"}
-b = {"t","m", "g", "k","p"}
+a = { "ande":1, "two": 3, 4:"arat"}
 
-print(a.symmetric_difference(b))
+b = 4
+
+print(a[b])
+
+
+
+
 
