@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-a = { "ande":1, "two": 3, 4:"arat"}
 
-print(a[])
 
+i = [1,2,3]
+mp = map(lambda x: x * 4,i)
+
+print(list(mp))
