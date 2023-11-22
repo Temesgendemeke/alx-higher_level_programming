@@ -3,11 +3,23 @@
 
 
 class Square:
+    """_summary_
+    """
     def __init__(self, size=0):
+        """_summary_
+
+        Args:
+            size (int, optional): _description_. Defaults to 0.
+        """
         self.size = size
 
     @property
     def size(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__size
 
     @size.setter

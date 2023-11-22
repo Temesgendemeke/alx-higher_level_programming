@@ -41,15 +41,35 @@ class Square:
         self.__size = value
     @property
     def position(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__position
     @position.setter
     def position(self, value):
+        """_summary_
+
+        Args:
+            value (_type_): _description_
+
+        Raises:
+            TypeError: _description_
+        """
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")  
         self.__position = value
     def area(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return self.__position ** 2
     def my_print(self):
+        """_summary_
+        """
         if self.__size== 0:
             print()
         for i in range(self.__size):

@@ -3,6 +3,8 @@
 
 
 class Square:
+    """_summary_
+    """
     def __init__(self, size=0):
         """
         initialize an instance
