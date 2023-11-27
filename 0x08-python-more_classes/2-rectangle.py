@@ -44,3 +44,13 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
+    def area(self):
+        """returns areas of reactangle"""
+        return self.height * self.width
+
+    def perimeter(self):
+        """returns perimeter of reactangle"""
+        if (self.width * self.width) == 0:
+            return 0
+        return 2 * (self.height + self.width)
