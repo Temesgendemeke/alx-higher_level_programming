@@ -59,25 +59,19 @@ class Rectangle:
             self.__width = value
 
     def __str__(self):
-        """
-        string representation of the rectangle by
-        concatenating rows of '#' characters.
+        """Return the printable representation of the Rectangle.
 
-        Returns:
-            str: "#" in respect reactangular shape
+        Represents the rectangle with the # character.
         """
-        if self.width == 0 or self.width == 0:
-            return ""
-        rectangle_str = ''
-        s = ""
-        if isinstance(self.print_symbol, list):
-            for i in range(self.height):
-                s += f"['{self.print_symbol[0]}', '{self.print_symbol[1]}', '{self.print_symbol[2]}']" * self.width
-            return s
-      
-        for _ in range(self.height):
-            rectangle_str += self.print_symbol * self.width + '\n'
-        return rectangle_str
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rect = []
+        for i in range(self.__height):
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
 
     def __repr__(self) -> str:
         """_summary_
