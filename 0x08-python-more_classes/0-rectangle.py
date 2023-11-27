@@ -3,4 +3,6 @@
 
 
 class Rectangle:
+    """_summary_
+    """
     pass
