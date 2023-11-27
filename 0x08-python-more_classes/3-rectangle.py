@@ -66,4 +66,6 @@ class Rectangle:
 
     def perimeter(self):
         """returns perimeter of reactangle"""
+        if self.width == 0 or self.width == 0:
+            return 0
         return 2 * (self.height + self.width)
