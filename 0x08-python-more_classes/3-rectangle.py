@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""_summary_"""
+"""documention for module"""
 
 
 class Rectangle:
@@ -45,6 +45,19 @@ class Rectangle:
         else:
             self.__width = value
 
+    def __str__(self) -> str:
+        """
+        string representation of the rectangle by
+        concatenating rows of '#' characters.
+
+        Returns:
+            str: "#" in respect reactangular shape
+        """
+        rectangle_str = ''
+        for _ in range(self.height):
+            rectangle_str += '#' * self.width + '\n'
+        return rectangle_str
+
     def area(self):
         """returns areas of reactangle"""
         return self.height * self.width
@@ -52,5 +65,5 @@ class Rectangle:
     def perimeter(self):
         """returns perimeter of reactangle"""
         if self.width == 0 or self.width == 0:
-            return 0
+            return ""
         return 2 * (self.height + self.width)
