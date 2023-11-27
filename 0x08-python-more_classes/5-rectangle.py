@@ -61,10 +61,19 @@ class Rectangle:
         return rectangle_str
 
     def __repr__(self) -> str:
-        """returns represention"""
+        """_summary_
+
+        Returns:
+            str: returns represention
+        """
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
+        """_summary_
+
+        Returns:
+            str : when an instance of Rectangle is deleted
+        """
         return "Bye rectangle..."
 
     def area(self):
