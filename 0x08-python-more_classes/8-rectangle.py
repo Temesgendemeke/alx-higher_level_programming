@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""_summary_"""
+"""documention for module"""
 
 
 class Rectangle:
@@ -14,6 +14,9 @@ class Rectangle:
     Returns:
         _type_: _description_
     """
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """_summary_
 
@@ -23,6 +26,7 @@ class Rectangle:
         """
         self.height = height
         self.width = width
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -53,6 +57,38 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
+    def __str__(self):
+        """Return the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rect = []
+        for i in range(self.__height):
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
+
+    def __repr__(self) -> str:
+        """_summary_
+
+        Returns:
+            str: returns represention
+        """
+        return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """_summary_
+
+        Returns:
+            str : when an instance of Rectangle is deleted
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     def area(self):
         """returns areas of reactangle"""
