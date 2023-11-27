@@ -53,6 +53,8 @@ class Rectangle:
         Returns:
             str: "#" in respect reactangular shape
         """
+        if self.width == 0 or self.width == 0:
+            return ""
         rectangle_str = ''
         for _ in range(self.height):
             rectangle_str += '#' * self.width + '\n'
@@ -64,6 +66,4 @@ class Rectangle:
 
     def perimeter(self):
         """returns perimeter of reactangle"""
-        if self.width == 0 or self.width == 0:
-            return ""
         return 2 * (self.height + self.width)
