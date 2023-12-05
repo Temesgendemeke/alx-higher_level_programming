@@ -12,4 +12,4 @@ def read_file(filename=""):
     A school every software engineer would have dreamt of!
     """
     with open(filename, encoding="utf-8") as files:
-        print(files.read())
+        print(files.read(), end="")

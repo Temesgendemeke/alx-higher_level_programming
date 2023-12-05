@@ -7,6 +7,5 @@ def write_file(filename="", text=""):
     >>> write_file("tests//my_first_file.txt", "This School is so cool!\n")
     24
     """
-    with open(filename, "r+", encoding="utf-8") as txtfile:
-        write_data = txtfile.write(text)
-        return write_data
+    with open(filename, "w", encoding="utf-8") as txtfile:
+        return txtfile.write(text)
