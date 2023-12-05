@@ -13,8 +13,8 @@ def load_from_json_file(filename):
     Returns:
         _type_: _description_
     """
-    with open(filename, encoding="utf") as f:
-        return json.loads(f)
+    with open(filename) as f:
+        return json.load(f)
         
         
         
