@@ -3,14 +3,9 @@
 
 
 def write_file(filename="", text=""):
-    """_summary_
-
-    Args:
-        filename (str, optional): _description_. Defaults to "".
-        text (str, optional): _description_. Defaults to "".
-
-    Returns:
-        _type_: _description_
+    """
+    >>> write_file("tests//my_first_file.txt", "This School is so cool!\n")
+    24
     """
     with open(filename, "r+", encoding="utf-8") as txtfile:
         write_data = txtfile.write(text)
