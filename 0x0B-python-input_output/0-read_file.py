@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""_summary_"""
+"""function that reads a text file"""
 
 
 def read_file(filename=""):
-    """_summary_
+    """
+    function that reads a text file
+    (UTF8) and prints it to stdout
 
     Args:
-        filename (str, optional): _description_. Defaults to "".
+        filename (str, optional): filename to bre readed
     """
     with open(filename, encoding="utf-8") as files:
         print(files.read())
