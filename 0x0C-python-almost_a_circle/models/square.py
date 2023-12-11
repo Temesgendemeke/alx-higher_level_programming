@@ -12,16 +12,17 @@ class Square(Rectangle):
     """_summary_
 
     Args:
-        Rectangle (_type_): _description_
+        Rectangle (class): inherit from this class
     """
     def __init__(self, size, x=0, y=0, id=None):
-        """_summary_
+        """
+        initailzer
 
         Args:
-            size (_type_): _description_
-            x (int, optional): _description_. Defaults to 0.
-            y (int, optional): _description_. Defaults to 0.
-            id (_type_, optional): _description_. Defaults to None.
+            size (int): size of the square
+            x (int, optional): x value
+            y (int, optional): y value
+            id (_type_, optional): id of the square. Defaults to None.
         """
         self.__size = size
         self.width = size
@@ -53,7 +54,15 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     def update(self, *args, **kwargs):
-        """_summary_
+        """Update the Square.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents size attribute
+                - 3rd argument represents x attribute
+                - 4th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         """
         len_of_args = len(args)
         if len_of_args == 0 and args is not None:
