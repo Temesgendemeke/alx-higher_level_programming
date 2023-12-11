@@ -1,57 +1,31 @@
-#!/usr/bin/python
-"""_summary_
-
-    Returns:
-        _type_: _description_
-"""
-
+#!/usr/bin/python3
+"""Defines a square class."""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """_summary_
+    """Represent a square."""
 
-    Args:
-        Rectangle (class): inherit from this class
-    """
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        initailzer
+        """Initialize a new Square.
 
         Args:
-            size (int): size of the square
-            x (int, optional): x value
-            y (int, optional): y value
-            id (_type_, optional): id of the square. Defaults to None.
+            size (int): The size of the new Square.
+            x (int): The x coordinate of the new Square.
+            y (int): The y coordinate of the new Square.
+            id (int): The identity of the new Square.
         """
-        self.__size = size
-        self.width = size
-        self.height = size
-        super().__init__(size, size, x=0, y=0, id=None)
-        self.x = x
-        self.y = y
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
-        return self.__size
+        """Get/set the size of the Square."""
+        return self.width
 
     @size.setter
     def size(self, value):
-        """setter"""
-        self.__size = self.width = self.height = value
-
-    def __str__(self) -> str:
-        """_summary_
-
-        Returns:
-            str: _description_
-        """
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """Update the Square.
@@ -64,31 +38,46 @@ class Square(Rectangle):
                 - 4th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-        len_of_args = len(args)
-        if len_of_args == 0 and args is not None:
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "size":
-                    self.size = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.size = arg
+                elif a == 2:
+                    self.x = arg
+                elif a == 3:
+                    self.y = arg
+                a += 1
 
-        if len_of_args == 1:
-            self.id = args[0]
-        elif len_of_args == 2:
-            self.size = args[1]
-        elif len_of_args == 3:
-            self.id = args[2]
-        elif len_of_args == 4:
-            self.size = args[3]
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def to_dictionary(self):
-        """_summary_
+        """Return the dictionary representation of the Square."""
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
 
-        Returns:
-            _type_: _description_
-        """
-        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+    def __str__(self):
+        """Return the print() and str() representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
