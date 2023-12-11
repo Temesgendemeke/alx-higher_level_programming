@@ -63,6 +63,6 @@ class Base:
         Returns:
             _type_: _description_
         """
-        if json_string is None:
+        if json_string is None or json_string == "[]":
             return []
-        return json.dumps(json_string)
+        return json.loads(json_string)
