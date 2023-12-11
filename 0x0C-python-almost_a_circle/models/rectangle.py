@@ -1,37 +1,7 @@
 #!/usr/bin/python3
 """_summary_"""
 
-import json
-class Base:
-    """_summary_"""
-    __nb_objects = 0
-
-    def __init__(self, id=None):
-        """_summary_
-
-        Args:
-            id (_type_, optional): _description_. Defaults to None.
-        """
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
-    @staticmethod
-    def to_json_string(list_dictionaries):
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-        return json.dumps(list_dictionaries)
-
-    @classmethod
-    def save_to_file(cls, list_objs):
-        if list_objs is None:
-           list_objs = []
-        filename = cls.__name__ + ".json"
-        with open(filename, 'w') as file:
-            json_str = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
-            file.write(json_str)
-        
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -55,7 +25,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         self.id = id
-        super().__init__(self.id)
+        super().__init__(id)
 
     @property
     def width(self):
@@ -134,15 +104,20 @@ class Rectangle(Base):
     def area(self):
         """return area of the rectangle"""
         return (self.__height * self.__width)
+
     def display(self):
         """print '#' respect to height and width"""
         for y in range(self.__y):
             print()
         for i in range(self.__height):
                 print(" " * self.__x + "#" * self.__width)
+
     def __str__(self) -> str:
         return f"[Rectangle] ({self.__id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+    
     def update(self, *args, **kwargs):
+        """_summary_
+        """
         num_args = len(args)
         
         if (args is None or num_args == 0) and  kwargs is not None:
@@ -167,7 +142,11 @@ class Rectangle(Base):
             self.__x = args[3]
         if num_args >= 5:
             self.__y = args[4]
+
     def to_dictionary(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return {'x': self.__x, 'y': self.__y , 'id': self.__id, 'height': self.__height, 'width': self.__width}
-       
-                
