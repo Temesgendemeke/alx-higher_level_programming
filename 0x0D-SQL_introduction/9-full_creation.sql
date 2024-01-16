@@ -1,5 +1,4 @@
 -- creates a table second_table in the database
-USE hbtn_0c_0;
 CREATE TABLE IF NOT EXISTS second_table (
     id int,
     name VARCHAR(256),
