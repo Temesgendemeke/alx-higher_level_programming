@@ -1,4 +1,4 @@
--- creates a table second_table in the database 
+-- creates a table second_table in the database
 USE hbtn_0c_0;
 CREATE TABLE IF NOT EXISTS second_table (
     id int,
@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS second_table (
     score int
 );
 INSERT INTO second_table (id, name, score)
-VALUES (1, “John”, 10), (2,“Alex”, 3), (3, “Bob”, 14), (4, “George”, 8);
+VALUES (1, 'John', 10), (2,'Alex', 3), (3, 'Bob', 14), (4, 'George', 8);
