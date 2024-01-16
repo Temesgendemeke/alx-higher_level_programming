@@ -1,2 +1,2 @@
 -- lists all records of the table
-SELECT score, name FROM second_table
+SELECT * FROM second_table ORDER BY length(score)
