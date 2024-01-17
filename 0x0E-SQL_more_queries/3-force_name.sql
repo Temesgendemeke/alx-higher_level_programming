@@ -1,5 +1,5 @@
 -- create table
 CREATE TABLE IF NOT EXISTS force_name (
-    id int,
+    id NOT,
     name VARCHAR(256) NOT NULL;
-)
+);
