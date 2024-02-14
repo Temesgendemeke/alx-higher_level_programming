@@ -8,5 +8,7 @@ exports.esrever = function (list) {
       list[idx - j] = temp;
     }
   }
+
+  list.reduceright();
   return list;
 };
