@@ -3,7 +3,7 @@
                             instance Base = declarative_base():"""
 
 from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, VARCHAR, String
+from sqlalchemy import Column, Integer,  String
 
 Base = declarative_base()
 
@@ -17,6 +17,6 @@ class State(Base):
     links to the MySQL table states
     """
     __tablename__ = "states"
-    id = Column("id", Integer, nullable=False, unique=True,
+    id = Column( Integer, nullable=False, unique=True,
                 primary_key=True, autoincrement=True,)
-    name = Column("name", String(128), nullable=False)
+    name = Column(String(128), nullable=False)
