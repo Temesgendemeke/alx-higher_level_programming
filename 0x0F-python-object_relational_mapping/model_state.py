@@ -1,5 +1,6 @@
 #!/user/bin/python3
-"""_summary_"""
+"""python file that contains the class definition of a State and an 
+                            instance Base = declarative_base():"""
 
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, VARCHAR, String
