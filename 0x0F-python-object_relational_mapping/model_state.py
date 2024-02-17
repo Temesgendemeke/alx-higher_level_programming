@@ -1,6 +1,5 @@
 #!/user/bin/python3
-"""python file that contains the class definition of a State and an 
-                            instance Base = declarative_base():"""
+"""python file that contains the class definition of a State and an instance"""
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer,  String
 
@@ -8,12 +7,10 @@ Base = declarative_base()
 
 
 class State(Base):
-    """_summary_
-
-    Args:
-        Base (_type_): _description_
-    inherits from Base Tips
-    links to the MySQL table states
+    """
+    Attributes:
+        id = ID state
+        name: Name of state
     """
     __tablename__ = "states"
     id = Column( Integer, nullable=False, 
