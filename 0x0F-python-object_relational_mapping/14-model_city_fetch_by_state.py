@@ -3,7 +3,7 @@
 
 if __name__ == '__main__':
     from model_state import Base, State
-    from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+    from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     from sys import argv
     from model_city import City
@@ -16,9 +16,8 @@ if __name__ == '__main__':
     session = Session()
     Base.metadata.create_all(engine)
     
-    print_c = session.query(City, State).join(State, City.state_id == State.id).order_by(City.id).all()
-    for s, c in print_c:
-        print("{}: ({}) {}".format(c.name, c.id, s.name))
+    print_c = session.query(State, City).select_from(State).join(City, State.id == City.state_id).order_by(City.id).all()
+    for state, city in print_c:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
-    
     session.close()
