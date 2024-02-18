@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Python file similar to model_state.py named model_city.py that contains the class definition of a City."""
 
 if __name__ == '__main__':
     from model_state import Base, State
