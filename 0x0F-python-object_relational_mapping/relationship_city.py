@@ -7,7 +7,6 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 
-
 class City(Base):
     """_summary_
 
