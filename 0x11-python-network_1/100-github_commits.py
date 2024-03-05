@@ -11,6 +11,6 @@ if __name__ == '__main__':
     url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo_name)
     res = get(url)
 
-    for commit in res.json()[:10]:
+    for commit in res.json()[::-1]:
         auther = commit['commit']
         print("{} {}".format(commit['sha'], commit['commit']['author']['name']))
