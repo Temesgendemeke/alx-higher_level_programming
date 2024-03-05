@@ -10,4 +10,3 @@ if __name__ == '__main__':
     email = {"email": argv[2]}
     res = post(url, data=email)
     print(res.text)
-    
