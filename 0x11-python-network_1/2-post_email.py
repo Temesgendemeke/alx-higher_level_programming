@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-#sends a POST request to the passed URL with the email as a parameter
+"""_summary_"""
+
+
 from sys import argv
 from urllib.request import urlopen
 from urllib import request, parse
