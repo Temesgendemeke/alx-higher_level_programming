@@ -4,7 +4,6 @@
 
 from requests import get, post
 from sys import argv
-import json
 
 if __name__ == '__main__':
     letter = ""
