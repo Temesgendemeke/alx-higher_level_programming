@@ -15,6 +15,7 @@ if __name__ == '__main__':
 
     try:
         for i in range(10):
-            print("{}: {}".format(commit[i]['sha'], commit[i]['commit']['author']['name']))
+            print("{}: {}".format(commit[i]['sha'], 
+                commit[i]['commit']['author']['name']))
     except IndexError:
         pass
